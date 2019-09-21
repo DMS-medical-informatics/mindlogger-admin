@@ -28,8 +28,8 @@
       <v-flex>
         <v-data-table :items="items"
          :headers="headers" :search="search"
-         :pagination.sync="pagination" v-model="selected"
-         select-all item-key="email" class="elevation-1">
+          v-model="selected"
+          item-key="email" class="elevation-1">
           
           <template slot="headers" slot-scope="props">
             <tr>

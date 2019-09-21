@@ -45,7 +45,7 @@
 
         <span style="text-align: right">
           <v-menu>
-            <v-btn flat slot="activator">
+            <v-btn text slot="activator">
               {{ currentType.label }}
               <v-icon>arrow_drop_down</v-icon>
             </v-btn>
@@ -63,7 +63,7 @@
         </span>
       </div>
 
-      <v-layout row wrap style="height: calc(100% - 200px);">
+      <v-layout row wrap>
         <!-- The activities in the applet -->
         <v-flex xs2>
           <div>
@@ -165,11 +165,11 @@
           <v-card>
             <v-card-title>{{ promptQuestion }}</v-card-title>
             <v-card-actions>
-              <v-btn color="primary" flat @click="choosePrompt( true )">
+              <v-btn color="primary" text @click="choosePrompt( true )">
                 {{ labels.promptConfirm }}
               </v-btn>
               <v-spacer></v-spacer>
-              <v-btn color="secondary" flat @click="choosePrompt( false )">
+              <v-btn color="secondary" text @click="choosePrompt( false )">
                 {{ labels.promptCancel }}
               </v-btn>
             </v-card-actions>
@@ -334,7 +334,7 @@ export default {
     {
       let small = this.$vuetify.breakpoint.xs;
 
-      if (small)
+      if (false)
       {
         return this.calendar.start.format( this.formats.xs );
       }
@@ -744,8 +744,7 @@ export default {
 }
 
 .ds-expand {
-  width: 100%;
-  height: 100%;
+  width:100%;
 }
 
 .ds-calendar-container {

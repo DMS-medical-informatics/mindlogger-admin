@@ -1,48 +1,36 @@
 <template>
   <v-app>
-  <v-stepper v-model="e1" style="overflow: auto; height: calc(100% - 48px);">
-    <v-stepper-header>
-      <v-stepper-step 
-      v-for="(step, index) in steps"
-      :key="`step_tab_${index}`"
-      :complete="e1 > index" :step="index+1">
-      {{step.name}}
-      </v-stepper-step>
-      
-    </v-stepper-header>
+    <v-stepper v-model="e1">
+      <v-stepper-header>
+        <v-stepper-step 
+        v-for="(step, index) in steps"
+        :key="`step_tab_${index}`"
+        :complete="e1 > index" :step="index+1">
+        {{step.name}}
+        </v-stepper-step>
+        
+      </v-stepper-header>
 
-    <v-stepper-items class="bg bog">
+      <v-stepper-items class="bg bog">
 
-      <v-stepper-content v-for="(step, index) in steps" :step="index+1"
-       :key="`step_content_${index}`">
-        <component v-bind:is="step.component" :ref="step.name"/>
-      </v-stepper-content>
+        <v-stepper-content v-for="(step, index) in steps" :step="index+1"
+        :key="`step_content_${index}`">
+          <component v-bind:is="step.component" :ref="step.name"/>
 
-    </v-stepper-items>
-
-  </v-stepper>
-
-  <v-layout row wrap>
-    <v-btn flat v-if="e1 > 1" @click="e1 -= 1">Prev</v-btn>
-    <v-flex></v-flex>
-    <v-flex></v-flex>
-    <v-flex>
-
-    <v-flex style="text-align: right;">
-      <v-btn
-      color="primary"
-      @click="next"
-      v-if="e1 < steps.length"
-      :disabled="!readyToContinue"
-      >
-      Continue
-      </v-btn>
-    </v-flex>
-    </v-flex>
-  </v-layout>
-
-       
-
+          <v-btn text v-if="e1 > 1" @click="e1 -= 1">
+            Prev
+          </v-btn>
+          <v-btn
+            color="primary"
+            @click="next"
+            v-if="e1 < steps.length"
+            :disabled="!readyToContinue"
+            >
+            Continue
+          </v-btn>
+        </v-stepper-content>
+      </v-stepper-items>
+    </v-stepper>
   </v-app>
 </template>
 
@@ -55,7 +43,6 @@
 
 .bg {
     z-index: 0;
-    min-height: calc(100% - 72px);
     border-top-style: solid;
     border-top-width: 1px;
     border-top-color: #e1e1e1;
@@ -192,14 +179,11 @@ export default {
 
 body, html, #app, #dayspan {
   font-family: 'IBM Plex Sans', sans-serif !important;
-  width: 100%;
-  height: 100%;
 }
 
-.v-btn--flat,
+.v-btn--text,
 .v-text-field--solo .v-input__slot {
   background-color: #f5f5f5 !important;
-  margin-bottom: 8px !important;
 }
 
 </style>

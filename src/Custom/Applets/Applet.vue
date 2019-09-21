@@ -48,7 +48,7 @@
         
 
         <v-card-actions class="pa-3 pt-3">
-          <!-- <v-btn flat color="orange" @click="select">Select</v-btn> -->
+          <!-- <v-btn text color="orange" @click="select">Select</v-btn> -->
         </v-card-actions>
     </v-card>
 </template>

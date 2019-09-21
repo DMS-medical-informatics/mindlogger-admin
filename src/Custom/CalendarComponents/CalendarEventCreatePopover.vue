@@ -37,7 +37,7 @@
 
        <v-btn
          class="ds-create-popover-save"
-         flat
+         text
          :disabled="!isValid"
          :style="styleText"
          @click="save">

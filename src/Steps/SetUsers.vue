@@ -6,7 +6,7 @@
      v-on:sendInvitationEmail="sendInvitationEmail"
      v-on:removeFromGroup="removeFromGroup"
      >
-      <template slot="header" v-slot:header>
+      <template v-slot:header>
         <h1 style="text-align: center">Users</h1>
         <p style="text-align: center">
           Send invitations to your users to participate in
@@ -29,8 +29,8 @@
 <script>
 import _ from 'lodash';
 // this is a table that renders users and groups.
-import UserTable from '../Custom/UserTable';
-import adminApi from '../Custom/Utils/api';
+import UserTable from '../custom/UserTable';
+import adminApi from '../custom/Utils/api';
 
 
 export default {

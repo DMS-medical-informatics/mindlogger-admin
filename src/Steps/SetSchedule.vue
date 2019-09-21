@@ -8,8 +8,8 @@
 
 <script>
 import _ from 'lodash';
-import Calendar from '../Custom/CalendarComponents/CalendarMain';
-import adminApi from '../Custom/Utils/api';
+import Calendar from '../custom/CalendarComponents/CalendarMain';
+import adminApi from '../custom/Utils/api';
 
 export default {
   name: 'schedule',
